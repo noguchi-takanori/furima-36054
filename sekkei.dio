@@ -1,0 +1,51 @@
+<mxfile host="65bd71144e">
+    <diagram id="gzY923nyXXnyxxWyLKbQ" name="ページ1">
+        <mxGraphModel dx="724" dy="680" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <object label="usersテーブル" id="2">
+                    <mxCell style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+                        <mxGeometry x="40" y="90" width="120" height="30" as="geometry"/>
+                    </mxCell>
+                </object>
+                <mxCell id="7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="3">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="280" y="145" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="3" target="12">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="nickname&lt;br&gt;email&lt;br&gt;password" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="120" width="120" height="50" as="geometry"/>
+                </mxCell>
+                <object label="itemsテーブル" id="8">
+                    <mxCell style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+                        <mxGeometry x="280" y="90" width="120" height="40" as="geometry"/>
+                    </mxCell>
+                </object>
+                <object label="price&lt;br&gt;product-name&lt;br&gt;detail" id="10">
+                    <mxCell style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+                        <mxGeometry x="280" y="125" width="120" height="55" as="geometry"/>
+                    </mxCell>
+                </object>
+                <object label="commentsテーブル" id="11">
+                    <mxCell style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+                        <mxGeometry x="170" y="250" width="120" height="40" as="geometry"/>
+                    </mxCell>
+                </object>
+                <mxCell id="14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.433;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="12" target="10">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="330" y="170" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <object label="comment" id="12">
+                    <mxCell style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+                        <mxGeometry x="170" y="290" width="120" height="40" as="geometry"/>
+                    </mxCell>
+                </object>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
