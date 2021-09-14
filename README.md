@@ -12,7 +12,7 @@
 | first_name_kana      | string  | null: false                 |
 
  has_many :items
- has_many :management
+ has_many :managements
 
 
 
@@ -29,10 +29,10 @@
 | scheduled_day_id   | integer        | null: false                    |
 | user               | references     | null: false, foreign_key: true |
 
- belongs_to :users
+ belongs_to :user
 
 
-# managementテーブル
+# managementsテーブル
 
 | Column            | Type       | Options                        |
 | ----------------- | ---------- | -----------                    |
@@ -40,7 +40,6 @@
 | item              | references | null: false, foreign_key: true |
 
  has_one :shipping-address
- belongs_to :shipping_address
  belongs_to :item
  belongs_to :user
 
@@ -48,11 +47,11 @@
 | Column         | Type       | Options                        |
 |--------------- | ---------- | ------------------------------ |
 | postal_code    | string     | null: false                    |
-| prefectures_id | integer    | null: false                    |
+| prefecture_id  | integer    | null: false                    |
 | municipalities | string     | null: false                    |
 | address        | string     | null: false                    |
 | building_name  | string     |                                |
 | phone_number   | string     | null: false                    |
-| user           | references | null: false, foreign_key: true |
-| item           | references | null: false, foreign_key: true |
 | management     | references | null: false, foreign_key: true |
+
+ belongs_to :management
