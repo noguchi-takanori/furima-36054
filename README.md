@@ -2,7 +2,7 @@
 # usersテーブル
 | Column               | Type    | Options                     |
 | -------------------- | ------- | --------------------------- |
-| email                | string  | null: false, uniquness:true |
+| email                | string  | null: false, unique: true   |
 | encrypted_password   | string  | null: false                 |
 | nickname             | string  | null: false                 |
 | birthday             | date    | null: false                 |
@@ -30,6 +30,7 @@
 | user               | references     | null: false, foreign_key: true |
 
  belongs_to :user
+ hasmany :management
 
 
 # managementsテーブル
@@ -39,11 +40,11 @@
 | user              | references | null: false, foreign_key: true |
 | item              | references | null: false, foreign_key: true |
 
- has_one :shipping-address
+ has_one :shipping_address
  belongs_to :item
  belongs_to :user
 
-# shipping-addressテーブル
+# shipping_addressテーブル
 | Column         | Type       | Options                        |
 |--------------- | ---------- | ------------------------------ |
 | postal_code    | string     | null: false                    |
