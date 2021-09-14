@@ -13,7 +13,6 @@
 
  has_many :items
  has_many :management
- has_one :shipping-address
 
 
 
@@ -28,22 +27,22 @@
 | payment_method_id  | integer        | null: false                    |
 | shipment_source_id | integer        | null: false                    |
 | scheduled_day_id   | integer        | null: false                    |
-| shipping_address   | references     | null: false, foreign_key: true |
 | user               | references     | null: false, foreign_key: true |
 
  belongs_to :users
- has_one :shipping-address
 
 
 # managementテーブル
 
 | Column            | Type       | Options                        |
 | ----------------- | ---------- | -----------                    |
-| shipping_address  | references | null: false, foreign_key: true |
+| user              | references | null: false, foreign_key: true |
 | item              | references | null: false, foreign_key: true |
 
+ has_one :shipping-address
  belongs_to :shipping_address
  belongs_to :item
+ belongs_to :user
 
 # shipping-addressテーブル
 | Column         | Type       | Options                        |
@@ -52,10 +51,8 @@
 | prefectures_id | integer    | null: false                    |
 | municipalities | string     | null: false                    |
 | address        | string     | null: false                    |
-| building_name  | string     | null: false                    |
-| phone_number   | integer    | null: false                    |
+| building_name  | string     |                                |
+| phone_number   | string     | null: false                    |
 | user           | references | null: false, foreign_key: true |
 | item           | references | null: false, foreign_key: true |
-
- belongs_to :user
- belongs_to :item
+| management     | references | null: false, foreign_key: true |
