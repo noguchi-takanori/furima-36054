@@ -12,10 +12,32 @@ RSpec.describe User, type: :model do
       user.valid?
       expect(user.errors.full_messages).to include("Email can't be blank")
     end
+    it 'emailが既に存在していると登録できない' do
+      user = User.new(nickname: 'test', email: 'test@example', password: 'A1A1A1', password_confirmation: 'A1A1A1', birthday: '2000-11-11', last_name: '山田', first_name: '太郎', last_name_kana: 'ヤマダ', first_name_kana: 'タロウ')
+      user.save
+      after_user = User.new(nickname: 'test', email: 'test@example', password: 'A1A1A1', password_confirmation: 'A1A1A1', birthday: '2000-11-11', last_name: '山田', first_name: '太郎', last_name_kana: 'ヤマダ', first_name_kana: 'タロウ')
+      after_user.valid?
+      expect(after_user.errors.full_messages).to include("Email has already been taken")
+    end
+    it 'email＠が無いと登録できない' do
+      user = User.new(nickname: 'test', email: 'asdfsample.com', password: 'A1A1A1', password_confirmation: 'A1A1A1', birthday: '2000-11-11', last_name: '山田', first_name: '太郎', last_name_kana: 'ヤマダ', first_name_kana: 'タロウ')
+      user.valid?
+      expect(user.errors.full_messages).to include("Email is invalid")
+    end
     it 'passwordが空では登録できない'do
     user = User.new(nickname: 'test', email: 'test@example', password: '', password_confirmation: '', birthday: '2000-11-11', last_name: '山田', first_name: '太郎', last_name_kana: 'ヤマダ', first_name_kana: 'タロウ')
       user.valid?
       expect(user.errors.full_messages).to include("Password can't be blank")
+    end
+    it 'passwordが6文字以下では登録できない'do
+    user = User.new(nickname: 'test', email: 'test@example', password: '12345', password_confirmation: '12345', birthday: '2000-11-11', last_name: '山田', first_name: '太郎', last_name_kana: 'ヤマダ', first_name_kana: 'タロウ')
+      user.valid?
+      expect(user.errors.full_messages).to include("Password is too short (minimum is 6 characters)")
+    end
+    it 'passwordが一致していないと登録できない'do
+    user = User.new(nickname: 'test', email: 'test@example', password: '123456', password_confirmation: '123457', birthday: '2000-11-11', last_name: '山田', first_name: '太郎', last_name_kana: 'ヤマダ', first_name_kana: 'タロウ')
+      user.valid?
+      expect(user.errors.full_messages).to include("Password confirmation doesn't match Password")
     end
     it '誕生日が空では登録できない' do
       user = User.new(nickname: 'test', email: 'test@example', password: 'A1A1A1', password_confirmation: 'A1A1A1', birthday: '', last_name: '山田', first_name: '太郎', last_name_kana: 'ヤマダ', first_name_kana: 'タロウ')
