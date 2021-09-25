@@ -15,6 +15,11 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
+    @category = Category.all
+    @status = Status.all
+    @payment = Payment.all
+    @shipment = Shipment.all
+    @scheduled = Scheduled.all
     if @item.valid? 
       @item.save
       redirect_to root_path
