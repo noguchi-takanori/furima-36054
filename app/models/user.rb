@@ -12,5 +12,5 @@ class User < ApplicationRecord
   validates :first_name_kana,    presence: true, format: { with: /\A[\p{katakana}\p{blank}ー－]+\z/}
   validates :encrypted_password, presence: true, format: { with: /(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{7,}/}
 
-  has_many  :item
+  has_many  :items
 end

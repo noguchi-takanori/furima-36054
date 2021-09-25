@@ -15,26 +15,17 @@ class Item < ApplicationRecord
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :category
+  validates :detail_category_id, numericality: { other_than: 1} 
 
-  validates :detail_category_id, numericality: { other_than: 1 , message: "can't be blank"} 
-
-  extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :status
+  validates :detail_status_id, numericality: { other_than: 1}
 
-  validates :detail_status_id, numericality: { other_than: 1 , message: "detail can't be blank"}
-
-  extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :payment
+  validates :payment_method_id, numericality: { other_than: 1} 
 
-  validates :payment_method_id, numericality: { other_than: 1 , message: "payment can't be blank"} 
-
-  extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :shipment
+  validates :shipment_source_id, numericality: { other_than: 1}
 
-  validates :shipment_source_id, numericality: { other_than: 1 , message: "shipment can't be blank"}
-
-  extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :scheduled
-
-  validates :scheduled_day_id, numericality: { other_than: 1 , message: "scheduled can't be blank"}
+  validates :scheduled_day_id, numericality: { other_than: 1}
 end
