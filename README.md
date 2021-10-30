@@ -44,7 +44,7 @@
  belongs_to :item
  belongs_to :user
 
-# shipping_addressテーブル
+# ordersテーブル
 | Column         | Type       | Options                        |
 |--------------- | ---------- | ------------------------------ |
 | postal_code    | string     | null: false                    |
