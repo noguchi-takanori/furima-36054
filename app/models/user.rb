@@ -13,4 +13,6 @@ class User < ApplicationRecord
   validates :encrypted_password, presence: true, format: { with: /(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{7,}/}
 
   has_many  :items
+
+  has_one_attached :management
 end
