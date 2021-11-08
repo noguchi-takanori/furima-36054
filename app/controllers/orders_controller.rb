@@ -37,11 +37,11 @@ class OrdersController < ApplicationController
 
   def move_to_index
     @item = Item.find(params[:item_id])
-    if user_signed_in? && current_user.id == @item.user_id
-      redirect_to action: :index
+    if current_user.id == @item.user.id || @item.management.present?
+      redirect_to root_path
     end
   end
 
-  
+
 
 end
