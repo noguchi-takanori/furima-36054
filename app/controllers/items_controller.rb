@@ -50,7 +50,7 @@ class ItemsController < ApplicationController
 
   def move_to_index
     @item = Item.find(params[:id])
-    if current_user.id == @item.user.id || @item.management.present?
+    if current_user.id != @item.user.id || @item.management.present?
       redirect_to root_path
     end
   end

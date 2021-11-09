@@ -16,6 +16,6 @@ class OrderManagement
 
   def save
     management = Management.create(user_id: user_id, item_id: item_id)
-    Order.create(postal_code: postal_code, prefecture_id: prefecture_id, municipalities: municipalities, address: address, building_name: building_name, phone_number: phone_number, management: management )
+    Order.create(postal_code: postal_code, prefecture_id: prefecture_id, municipalities: municipalities, address: address, building_name: building_name, phone_number: phone_number, management_id: management.id )
   end
 end
