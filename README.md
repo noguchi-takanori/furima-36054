@@ -40,11 +40,11 @@
 | user              | references | null: false, foreign_key: true |
 | item              | references | null: false, foreign_key: true |
 
- has_one :shipping_address
+ has_one :orders
  belongs_to :item
  belongs_to :user
 
-# shipping_addressテーブル
+# ordersテーブル
 | Column         | Type       | Options                        |
 |--------------- | ---------- | ------------------------------ |
 | postal_code    | string     | null: false                    |
