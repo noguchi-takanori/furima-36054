@@ -11,9 +11,9 @@ class OrdersController < ApplicationController
   def create
     @order_management = OrderManagement.new(order_management_params)
     if @order_management.valid?
-        card_payment
-        @order_management.save
-        return redirect_to root_path
+      card_payment
+      @order_management.save
+      return redirect_to root_path
     else
       render :index
     end
@@ -31,13 +31,16 @@ class OrdersController < ApplicationController
             )
   end
 
+
   def order_management_params
     params.require(:order_management).permit(:postal_code, :prefecture_id, :municipalities, :address, :building_name, :phone_number).merge(user_id: current_user.id, item_id: params[:item_id], token: params[:token])
   end
 
+
   def set_item
     @item = Item.find(params[:item_id])
   end
+
 
   def move_to_index
     @item = Item.find(params[:item_id])
@@ -45,7 +48,6 @@ class OrdersController < ApplicationController
       redirect_to root_path
     end
   end
-
 
 
 end

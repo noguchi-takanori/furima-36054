@@ -23,7 +23,7 @@ class Item < ApplicationRecord
   validates :status_id, numericality: { other_than: 1}
 
   belongs_to :payment
-  validates :payment_id, numericality: { other_than: 1} 
+  validates :payment_id, numericality: { other_than: 1}
 
   belongs_to :shipment
   validates :shipment_id, numericality: { other_than: 1}
